@@ -138,7 +138,7 @@ def indices_nearest_neighbors(coords):
 
 
 if __name__ == "__main__":
-    coords = coords_for_zigzag_chain(n_pairs=3)
+    coords = coords_for_zigzag_chain(n_pairs=3, theta_deg=48.2)
     coords = np.array(coords)
     fig = plt.figure()
     ax = fig.add_subplot(111)
