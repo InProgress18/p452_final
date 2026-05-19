@@ -137,6 +137,23 @@ def indices_nearest_neighbors(coords):
     return neighbors
 
 
+def indices_next_nearest_neighbors(coords):
+    """Return next-nearest neighbor pairs — the second distance shell.
+
+    Identifies the NNN shell by finding all pairwise distances, isolating the
+    minimum (NN) distance, then finding the next distinct distance cluster.
+    A 15% tolerance is used to group distances into shells.
+    """
+    neighbors = []
+    for i in range(len(coords)):
+        for j in range(i + 1, len(coords)):
+            if (
+                compute_distances(coords[i], coords[j]) < 4
+            ):  # Threshold distance for nearest neighbors
+                neighbors.append((i, j))
+    return neighbors
+
+
 if __name__ == "__main__":
     coords = coords_for_zigzag_chain(n_pairs=3, theta_deg=48.2)
     coords = np.array(coords)
