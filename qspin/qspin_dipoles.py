@@ -520,11 +520,11 @@ def set_pi_ticks(ax, xmax):
     labels = []
     for n in range(nmax + 1):
         if n == 0:
-            labels.append(r"$0$")
+            labels.append("0")
         elif n == 1:
-            labels.append(r"$\pi$")
+            labels.append("pi")
         else:
-            labels.append(rf"${n}\pi$")
+            labels.append(f"{n}pi")
     ax.set_xticks(ticks)
     ax.set_xticklabels(labels)
 
@@ -870,7 +870,7 @@ def plot_normalized_couplings(
         sm = ScalarMappable(norm=norm, cmap=cmap)
         sm.set_array([])
         cbar = fig.colorbar(sm, ax=ax, fraction=0.046, pad=0.035)
-        cbar.set_label(r"$J_{ij}/|J_{02}|$", rotation=90)
+        cbar.set_label("Jij / |J02|", rotation=90)
 
     if show_legend and not use_coupling_colormap:
         legend_handles = [
@@ -913,7 +913,7 @@ def make_imbalance_fidelity_figure(
         axes[0].plot(x, result["imb_full"], "--",
                      label="all-pair dipolar interaction", lw=1.8)
     axes[0].axhline(0, color="k", lw=0.5, ls="--")
-    axes[0].set_ylabel(r"$I(t)$")
+    axes[0].set_ylabel("I(t)")
     axes[0].set_title("Generalized imbalance")
     axes[0].legend(fontsize=9)
     if cut_x is not None:
@@ -926,8 +926,8 @@ def make_imbalance_fidelity_figure(
         axes[1].plot(x, result["fid_full"], "--",
                      label="all-pair dipolar interaction", lw=1.8)
     axes[1].axhline(0, color="k", lw=0.5, ls="--")
-    axes[1].set_ylabel(r"$F(t) = |\langle\psi_0|\psi(t)\rangle|^2$")
-    axes[1].set_xlabel(r"$|J_{02}|\,t$")
+    axes[1].set_ylabel("F(t)")
+    axes[1].set_xlabel("|J02| t")
     axes[1].set_title("Many-body fidelity")
     axes[1].legend(fontsize=9)
     if cut_x is not None:
@@ -972,7 +972,7 @@ def make_spin_configuration_figure(
                 fontsize=8.5, color="black", fontweight="bold", zorder=4)
 
     cbar = fig.colorbar(sc, ax=ax, fraction=0.046, pad=0.035)
-    cbar.set_label(r"$\langle\sigma_i^z\rangle$")
+    cbar.set_label("<sigma_i^z>")
     ax.set_aspect("equal")
     ax.set_axis_off()
     ax.set_title(title)
@@ -1000,10 +1000,10 @@ def make_noise_figure(noise_result):
         alpha=0.18, lw=0,
     )
     axes[0].plot(x, noise_result["imb_mean"], lw=2.2,
-                 label=rf"noisy avg, $\sigma_z={sigma_z:.3f}$")
+                 label=f"noisy avg, sigma_z={sigma_z:.3f}")
     axes[0].plot(x, noise_result["imb_clean"], "--", lw=2.0, label="clean")
     axes[0].axhline(0, color="k", lw=0.5, ls="--")
-    axes[0].set_ylabel(r"$I(t)$")
+    axes[0].set_ylabel("I(t)")
     axes[0].set_title("Imbalance with z-position disorder")
     axes[0].legend(fontsize=9)
 
@@ -1014,11 +1014,11 @@ def make_noise_figure(noise_result):
         alpha=0.18, lw=0,
     )
     axes[1].plot(x, noise_result["fid_mean"], lw=2.2,
-                 label=rf"noisy avg, $\sigma_z={sigma_z:.3f}$")
+                 label=f"noisy avg, sigma_z={sigma_z:.3f}")
     axes[1].plot(x, noise_result["fid_clean"], "--", lw=2.0, label="clean")
     axes[1].axhline(0, color="k", lw=0.5, ls="--")
-    axes[1].set_ylabel(r"$F(t)$")
-    axes[1].set_xlabel(r"$|J_{02}^{\rm clean}|\,t$")
+    axes[1].set_ylabel("F(t)")
+    axes[1].set_xlabel("|J02 clean| t")
     axes[1].set_title("Fidelity with z-position disorder")
     axes[1].legend(fontsize=9)
 

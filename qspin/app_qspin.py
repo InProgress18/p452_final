@@ -715,7 +715,7 @@ if page == "Dipolar ladder demonstration":
             fig_spin = make_spin_configuration_figure(
                 result["coords"],
                 result[site_mag_key][cut_index],
-                title=rf"Spin configuration at $|J_{{02}}|t = {cut_x_actual:.2f}$",
+                title=f"Spin configuration at |J02|t = {cut_x_actual:.2f}",
             )
             safe_tight_layout(fig_spin)
             st.pyplot(fig_spin)
