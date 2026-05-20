@@ -2,6 +2,8 @@
 
 Interactive Streamlit demos and backend simulation code for kinetic-frustration quantum many-body scars (QMBS) in a tilted dipolar zigzag chain, based on [Ding, Verresen & Yan, arXiv:2603.11191](https://arxiv.org/abs/2603.11191).
 
+Webapp link - https://p452final-krce4hkydme6grtdqkjmx7.streamlit.app/app_qspin
+
 Two complementary simulation approaches are implemented side-by-side:
 
 | Page | Method | Backend |
@@ -9,7 +11,7 @@ Two complementary simulation approaches are implemented side-by-side:
 | **Trotter Simulation** | First-order Suzuki-Trotter on a quantum circuit | Qiskit statevector |
 | **Dipolar Ladder (QuSpin)** | Exact diagonalization via the XY spin-exchange Hamiltonian | QuSpin |
 
-Webapp link - https://p452final-krce4hkydme6grtdqkjmx7.streamlit.app/app_qspin
+
 ---
 
 ## Physics Background
