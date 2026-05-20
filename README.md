@@ -9,6 +9,7 @@ Two complementary simulation approaches are implemented side-by-side:
 | **Trotter Simulation** | First-order Suzuki-Trotter on a quantum circuit | Qiskit statevector |
 | **Dipolar Ladder (QuSpin)** | Exact diagonalization via the XY spin-exchange Hamiltonian | QuSpin |
 
+Webapp link - https://p452final-krce4hkydme6grtdqkjmx7.streamlit.app/app_qspin
 ---
 
 ## Physics Background
